@@ -1,0 +1,12 @@
+{
+  "name": "weather101",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "Grass",
+  "type": "module",
+  "main": "/src/index.js",
+  "scripts": {
+    "start": "node run index.js"
+  }
+}
