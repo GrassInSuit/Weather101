@@ -1,2 +1,2 @@
 # Weather101
-Weather app but will just js
+Weather app but with just js
