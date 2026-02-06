@@ -4,8 +4,8 @@
   "description": "",
   "license": "MIT",
   "author": "Grass",
-  "type": "commonjs",
-  "main": "index.js",
+  "type": "module",
+  "main": "/src/index.js",
   "scripts": {
     "start": "node run index.js"
   }
