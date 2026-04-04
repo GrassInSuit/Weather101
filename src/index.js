@@ -54,6 +54,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
         const date = `${day} ${month[parseInt(monthNum) - 1]} | ${formattedHour}:00`
         const windUnit = activeData.unitGroup === "metric" ? "kph" : "mph";
         let location = activeData.locationName || activeData.resolvedAddress || "Unknown Location";
+        console.log(location);
         if (location.length > 20){
             location = location.slice(0,10)+"...";
         }
