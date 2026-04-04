@@ -96,13 +96,12 @@ async function displayCurrentWeather(selectedHour,selectedDay){
             dayElement.setAttribute('class','Day');
             //adding a diffrent id for each day-element to be able to target them later if needed
             dayElement.setAttribute('id','D'+i);
-            if (i == selectedDay){
-                dayElement.style.backgroundColor = "#2A2A31";
-                dayElement.style.color = "#D3DAD9";
-                dayElement.style.boxShadow = "0 1px 5px rgba(0, 0, 0, 0.5)";
-                //dayElement.style.transition = "0.3s ease-in-out";
-            };
-
+                //different color for the selected day
+                if (i == selectedDay){
+                    dayElement.style.backgroundColor = "#2A2A31";
+                    dayElement.style.color = "#D3DAD9";
+                    dayElement.style.boxShadow = "0 1px 5px rgba(0, 0, 0, 0.5)";
+                };
             const dateElement = document.createElement('div');
             dateElement.setAttribute('class','date');
             dateElement.textContent=`${Date}`;
@@ -129,11 +128,12 @@ async function displayCurrentWeather(selectedHour,selectedDay){
             hourElement.setAttribute('class','Hour');
             //adding a diffrent id for each hour-element to be able to target them later if needed
             hourElement.setAttribute('id','H'+i);
-                        if (i == selectedHour){
-                hourElement.style.backgroundColor = "#A4C4CA";
-                hourElement.style.color = "#37353E";
-
-            }
+                    //different color for the selected hour
+                if (i == selectedHour){
+                hourElement.style.backgroundColor = "#2A2A31";
+                hourElement.style.color = "#D3DAD9";
+                hourElement.style.boxShadow = "0 1px 5px rgba(0, 0, 0, 0.5)";
+                }
             const hour = document.createElement('div');
             hour.setAttribute('class','hour');
             hour.textContent = `${i}:00`;
