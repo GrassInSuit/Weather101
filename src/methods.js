@@ -2,15 +2,14 @@ import { apiKey , fixedURL} from "./cte.js";
 export function textContent(){
     this.createText = function(text,element){
         this.removeText(element);
-        const textNode = document.createTextNode(text);
-        element.appendChild(textNode);
+        this.addText(text,element);
     }
     this.removeText = function(element){
         element.innerHTML = '';
     }
-    this.updateText = function(text,element){
-        this.removeText(element);
-        this.createText(text,element);
+    this.addText = function(text,element){
+        const textNode = document.createTextNode(text);
+        element.appendChild(textNode);
     }
 }
 
@@ -33,7 +32,7 @@ export function fetchWeather() {
                 //handling errors if fetching was unsuccessful, displays the error status and message in the errorHandler section
 
                 if (!response.ok){
-                    throw new Error(`Error ftahcing by name ${response.status} : ${response.statusText}`);
+                    throw new Error(`Error fetching by name ${response.status} : ${response.statusText}`);
             }           
                 //if fetching was successful, store the data in activeData as a JSON object
                 console.log("fetching done by name! " ,response.status);

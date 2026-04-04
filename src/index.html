@@ -7,20 +7,80 @@
     <title>Weather101</title>
 </head>
 <body>
-    <h1 >Welcome to weather101</h1>
-    <form id="inputList">
-        <div id="errorHandler"></div>
-        <input name ="city" type="text" placeholder="Enter city name"/>
-        <select>
-            <option value="us">US</option>
-            <option value="metric">metric</option>
+    <div class="design"></div>
+    <nav class="navBar">
+    <div class="navDiv">
+    <div class="Title"><a><span class="prefix">Welcome to</span> weather101</a></div>
+    <ul class="btn">
+        <button class="themeBtn"><a>theme</a></button>
+        <select class="langSelec">
+            <option value="Eng"><a>Eng</a></option>
+            <option value="Fr"><a >Fr</a></option>
         </select>
-            <button type="submit">fetch weather</button>
+    </ul>
+</nav>
+    <div class="mainBody">
+        <form id="inputList" class="inputList">
+        <input name ="city" type="text" placeholder="Seach for a location . . ."/>
+            <button type="submit" class="submitBtn"></button>
+        <select>
+            <option value="metric">EU</option>
+            <option value="us">US</option>
+        </select>
     </form>
-    <div id="currentWeather">
-    </div>
-<button id="debug">debugging</button>
+    <div id="errorHandler"></div>
+</div>
+    <div class="outputBox">
+        <div class="selectedWeather">
+            <div class="weatherLocation">
+                <div class="city"></div>
+                <div class="Timezone"></div>
+                <div class="hourDisplay"></div>
+            </div>
+            <div class="weatherIcon"><img src="\assets\rainy_4961877.png" alt="Weather" class="Icon"></div>
+            <div class="weatherTemp">
+                <div class="Temp"></div>
+                <div class="fTemp"></div>
+            </div>
+            <div class="statList">
 
+                    <span>Humidity:</span><div id="Humidity"></div><img src="\assets\Humidity.svg">
+                    <span>Dew:</span><div id="Dew"></div><img src="\assets\Dew.svg">
+                    <span>Wind:</span><div id="Wind"></div><img src="\assets\Wind.svg">
+                    <span>UV:</span><div id="UV-index"></div><img src="\assets\UV.svg">
+
+            </div>
+
+        </div>
+        <div class="daysSlider">
+            <div class="headText">Upcoming days:</div>
+            <div class="nav-Bar">
+                <div id='days-Slider'class="days-sliderWrapper">
+
+
+                        </div>
+                    </div>
+            </div>
+
+
+        <div class="hoursSlider">
+            <div class="headText">Hourly broadcast:</div>
+
+            <div class="scroll-Bar">
+                <div class="cardWrapper">
+
+                </div>
+                    </div>
+                        </div>
+</div>        </div>
+    <nav class="footer">
+        <ul class="contact list">
+
+        </ul>
+        <ul>
+            <div class="copyright">Copyrights 2026© reserved to Grass</div>
+        </ul>
+    </nav>
 </body>
 <script type="module" src="index.js"></script>
 </html>
