@@ -6,6 +6,7 @@
 *{
     padding: 0%;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -15,6 +16,8 @@ body{
     font-family: 'Poppins', sans-serif;
     color: #D3DAD9;
     min-width: 310px;
+    overflow-x: hidden; /* Prevents horizontal scrolling entirely */
+    width: 100%;
 }
 
 /* --- NAVIGATION SYSTEM --- */
@@ -385,6 +388,7 @@ body{
     height: 33%;
     width: 100%;
     overflow-y: scroll;
+    overflow-x: hidden;
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
 }
@@ -485,6 +489,7 @@ body{
     }
     .outputBox{
         width: 100%;
+        min-width: 0;
         margin-top: 1rem;
         padding: 0rem;
         height: auto;
@@ -495,9 +500,8 @@ body{
         row-gap: 0.5rem;
     }
     .selectedWeather{
-        min-width: 180px;
+        min-width: 0;
         width: 100%;
-        min-width: 390px;
         grid-column: span 2;
         grid-row:  span 1;
     }
@@ -521,7 +525,7 @@ body{
     .Temp{
         font-size: 1.3rem;
     }
-    
+
     .fTemp{
         font-size: 0.8rem;
     }
@@ -543,12 +547,12 @@ body{
     }
     .scroll-Bar{
         width: 100%;
-        min-width: 390px;
+        min-width: 0;
         grid-row: 2/3;
     }
     .hoursSlider{
         width: 100%;
-        min-width: 390px;
+        min-width: 0;
         grid-column: span 2;
         }
     .daysSlider{
@@ -557,7 +561,7 @@ body{
         grid-column: span 2;
     }
     .Day{
-        width: 100%;
+        width: 95%;
         grid-template-columns: 1fr 1fr 2fr;
         margin-left: 0.5rem;
     }
