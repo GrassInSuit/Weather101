@@ -30,7 +30,6 @@ body{
 }
 
 .navDiv{
-    max-width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -483,27 +482,81 @@ body{
         margin-left: 10px;
     }
     .outputBox{
-        width: 80%;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        width: 100%;
         height: auto;
         display: grid;
         align-items: center;
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: 1fr 0.5fr 1fr;
+        row-gap: 0.5rem;
     }
     .selectedWeather{
-                width: 180px;
-
+        min-width: 180px;
         width: 100%;
+        min-width: 390px;
         grid-column: span 2;
         grid-row:  span 1;
     }
-    .scroll-Bar{
+    .weatherLocation{
+        font-size: 0.8rem;
+        text-indent: 15%;
+    }
+    .city{
+    text-indent: 15%;
+    font-size: 1.3rem;
+    }
+    .Icon{
+        height: 4rem;
+        width: 4rem;
+    }
+    .weatherTemp{
+        grid-column: 2/3;
+        grid-row: 2/4;
+        margin: 1rem 0rem 1rem 0rem;
+    }
+    .Temp{
+        font-size: 1.3rem;
+    }
+    .fTemp{
+        font-size: 0.8rem;
+    }
+    .statList{
         width: 100%;
+        height: 5rem; 
         grid-column: span 2;
         grid-row: 2/3;
+        margin: 0rem;
+        row-gap: 0.3rem;
+        grid-template-columns: repeat(4,1fr);
+        padding: 0.2rem;
     }
+    .statList span {
+        font-size: 0.8rem;
+    }
+    .statList div{
+        font-size: 1rem;
+    }
+    .scroll-Bar{
+        width: 100%;
+        min-width: 390px;
+        grid-row: 2/3;
+    }
+    .hoursSlider{
+        width: 100%;
+        min-width: 390px;
+        grid-column: span 2;
+        }
     .daysSlider{
         grid-row:3/4;
+        width: 100%;
+        grid-column: span 2;
+    }
+    .Day{
+        width: 100%;
+        grid-template-columns: 1fr 1fr 2fr;
+        margin-left: 0.5rem;
     }
 }
 @media (max-width: 920px) and (min-width: 550px){
