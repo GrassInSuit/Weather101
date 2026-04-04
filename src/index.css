@@ -482,8 +482,31 @@ body{
     .inputList select{
         margin-left: 10px;
     }
+    .outputBox{
+        width: 80%;
+        height: auto;
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 1fr 0.5fr 1fr;
+    }
+    .selectedWeather{
+                width: 180px;
+
+        width: 100%;
+        grid-column: span 2;
+        grid-row:  span 1;
+    }
+    .scroll-Bar{
+        width: 100%;
+        grid-column: span 2;
+        grid-row: 2/3;
+    }
+    .daysSlider{
+        grid-row:3/4;
+    }
 }
-@media (max-width: 920px) {
+@media (max-width: 920px) and (min-width: 550px){
     .outputBox{
         width: 520px;
         height: auto;
