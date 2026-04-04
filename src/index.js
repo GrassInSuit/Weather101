@@ -96,7 +96,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
             //adding a diffrent id for each day-element to be able to target them later if needed
             dayElement.setAttribute('id','D'+i);
             if (i == selectedDay){
-                dayElement.style.backgroundColor = "#37353E";
+                dayElement.style.backgroundColor = "rgb(164, 196, 202)";
                 dayElement.style.color = "#37353E";
                 dayElement.style.boxShadow = "";
                 dayElement.style.backdropFilter = "blur(5px)";
@@ -119,7 +119,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
             dayElement.appendChild(dayTemp);
             navbar.appendChild(dayElement);
         }
-        console.log
+        
             const scrollBar = document.querySelector('.cardWrapper');
             scrollBar.innerHTML = '';
         //this block will fill the slider with the next 24 hours of weather
