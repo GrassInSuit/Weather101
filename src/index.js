@@ -53,6 +53,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
         const formattedHour = selectedHour.toString().padStart(2, '0'); // Ensures "09" instead of "9"
         const date = `${day} ${month[parseInt(monthNum) - 1]} | ${formattedHour}:00`
         const windUnit = activeData.unitGroup === "metric" ? "kph" : "mph";
+        console.log(activeData);
         let location = activeData.locationName || activeData.resolvedAddress || "Unknown Location";
         console.log(location);
         if (location.length > 20){
