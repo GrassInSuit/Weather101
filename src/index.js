@@ -83,7 +83,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
         
         const weatherIcon = document.querySelector('.Icon');
              const navbar = document.getElementById('days-Slider');       
-        weatherIcon.setAttribute('src', `assets//${weatherObject.Icon}.png`);
+        weatherIcon.setAttribute('src', `assets/${weatherObject.Icon}.png`);
         //days forcast slider:
         //first this line ensures that the silder is empty
         navbar.innerHTML = '';
