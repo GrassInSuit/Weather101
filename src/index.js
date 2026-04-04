@@ -83,7 +83,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
         
         const weatherIcon = document.querySelector('.Icon');
              const navbar = document.getElementById('days-Slider');       
-        weatherIcon.setAttribute('src', `\\assets\\${weatherObject.Icon}.png`);
+        weatherIcon.setAttribute('src', `assets/${weatherObject.Icon}.png`);
         //days forcast slider:
         //first this line ensures that the silder is empty
         navbar.innerHTML = '';
@@ -108,7 +108,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
 
             const dayIcon = document.createElement('img');
             dayIcon.setAttribute('class','Days')
-            dayIcon.setAttribute('src', `\\assets\\${activeData.days[i].icon}.png`);
+            dayIcon.setAttribute('src', `assets/${activeData.days[i].icon}.png`);
 
             const dayTemp = document.createElement('div');
             dayTemp.setAttribute('class','temp');
@@ -141,7 +141,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
             const hourIcon = document.createElement('img');
             hourIcon.setAttribute('class','hourIcon');
 
-            hourIcon.setAttribute('src', `\\assets\\${activeData.days[selectedDay].hours[i].icon}.png`);
+            hourIcon.setAttribute('src', `assets/${activeData.days[selectedDay].hours[i].icon}.png`);
             hourElement.appendChild(hour);
 
             const hourTemp = document.createElement('div');
