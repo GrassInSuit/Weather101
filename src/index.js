@@ -16,7 +16,6 @@ navigator.geolocation.getCurrentPosition(async position => {
     const Latitude = position.coords.latitude.toFixed(2);
     const Longitude = position.coords.longitude.toFixed(2);
     fetchHandler.useCoords(Latitude,Longitude,unitGroup).then(data => {
-        console.log(data);
         fetchHandler.getLocationName(Latitude,Longitude).then(name => {
             activeData = Object.assign({locationName:name, unitGroup, unit},data);
             const localHour = parseInt(activeData.currentConditions.datetime.split(":")[0]);
@@ -98,10 +97,9 @@ async function displayCurrentWeather(selectedHour,selectedDay){
             //adding a diffrent id for each day-element to be able to target them later if needed
             dayElement.setAttribute('id','D'+i);
             if (i == selectedDay){
-                dayElement.style.backgroundColor = "rgb(164, 196, 202)";
-                dayElement.style.color = "#37353E";
-                dayElement.style.boxShadow = "";
-                dayElement.style.backdropFilter = "blur(5px)";
+                dayElement.style.backgroundColor = "#2A2A31";
+                dayElement.style.color = "#D3DAD9";
+                dayElement.style.boxShadow = "0 1px 5px rgba(0, 0, 0, 0.5)";
                 //dayElement.style.transition = "0.3s ease-in-out";
             };
 
