@@ -16,6 +16,7 @@ navigator.geolocation.getCurrentPosition(async position => {
     const Latitude = position.coords.latitude.toFixed(2);
     const Longitude = position.coords.longitude.toFixed(2);
     fetchHandler.useCoords(Latitude,Longitude,unitGroup).then(data => {
+        console.log(data);
         fetchHandler.getLocationName(Latitude,Longitude).then(name => {
             activeData = Object.assign({locationName:name, unitGroup, unit},data);
             const localHour = parseInt(activeData.currentConditions.datetime.split(":")[0]);
