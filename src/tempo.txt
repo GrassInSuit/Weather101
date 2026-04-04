@@ -1,0 +1,10 @@
+<form id="inputList" class="input">
+        <div id="errorHandler"></div>
+        <input name ="city" type="text" placeholder="Enter city name"/>
+        <select>
+            <option value="us">US</option>
+            <option value="metric">metric</option>
+        </select>
+            <button type="submit">fetch weather</button>
+                </form>
+                <button id="debug">debugging</button>
