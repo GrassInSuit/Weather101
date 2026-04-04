@@ -145,7 +145,7 @@ body{
 }
 
 .inputList input:focus{
-    transform: scale(1.05);
+    background-color: #2A2A31;
     outline: none;
 }
 
