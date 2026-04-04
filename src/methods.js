@@ -16,7 +16,7 @@ export function textContent(){
 export function fetchWeather() {
         this.getLocationName = async function(Latitude,Longitude){
     try {
-       const response = await fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${Latitude}&lon=${Longitude}&limit=5&appid=${apiKey.geolocation}`);
+       const response = await fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${Latitude}&lon=${Longitude}&limit=5&appid=${apiKey.geolocation}`);
          if (!response.ok){
             throw new Error(`Error ${response.status} : ${response.statusText}`);
         }
