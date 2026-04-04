@@ -124,7 +124,6 @@ async function displayCurrentWeather(selectedHour,selectedDay){
             scrollBar.innerHTML = '';
         //this block will fill the slider with the next 24 hours of weather
         for(let i=0;i<24;i++){
-            console.log(i);
 
             const hourElement = document.createElement('div');
             hourElement.setAttribute('class','Hour');
