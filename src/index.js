@@ -104,7 +104,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
                 };
             const dateElement = document.createElement('div');
             dateElement.setAttribute('class','date');
-            dateElement.textContent=`${Date}`;
+            dateElement.textContent=`${activeData.days[i].datetime.split("-")[2]} ${month[parseInt(activeData.days[i].datetime.split("-")[1]) - 1]}`;
 
             const dayIcon = document.createElement('img');
             dayIcon.setAttribute('class','Days')
