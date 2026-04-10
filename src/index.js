@@ -85,7 +85,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
         
         const weatherIcon = document.querySelector('.Icon');
              const navbar = document.getElementById('days-Slider');       
-        weatherIcon.setAttribute('src', `assets/${weatherObject.Icon}.png`);
+        weatherIcon.setAttribute('src', `assets/${weatherObject.Icon}.svg`);
         //days forcast slider:
         //first this line ensures that the silder is empty
         navbar.innerHTML = '';
@@ -98,9 +98,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
             dayElement.setAttribute('id','D'+i);
                 //different color for the selected day
                 if (i == selectedDay){
-                    dayElement.style.backgroundColor = "#2A2A31";
-                    dayElement.style.color = "#D3DAD9";
-                    dayElement.style.boxShadow = "0 1px 5px rgba(0, 0, 0, 0.5)";
+                dayElement.style.border = "1px solid";
                 };
             const dateElement = document.createElement('div');
             dateElement.setAttribute('class','date');
@@ -108,7 +106,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
 
             const dayIcon = document.createElement('img');
             dayIcon.setAttribute('class','Days')
-            dayIcon.setAttribute('src', `assets/${activeData.days[i].icon}.png`);
+            dayIcon.setAttribute('src', `assets/${activeData.days[i].icon}.svg`);
 
             const dayTemp = document.createElement('div');
             dayTemp.setAttribute('class','temp');
@@ -130,9 +128,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
             hourElement.setAttribute('id','H'+i);
                     //different color for the selected hour
                 if (i == selectedHour){
-                hourElement.style.backgroundColor = "#2A2A31";
-                hourElement.style.color = "#D3DAD9";
-                hourElement.style.boxShadow = "0 1px 5px rgba(0, 0, 0, 0.5)";
+                hourElement.style.border = "1px solid";
                 }
             const hour = document.createElement('div');
             hour.setAttribute('class','hour');
@@ -141,7 +137,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
             const hourIcon = document.createElement('img');
             hourIcon.setAttribute('class','hourIcon');
 
-            hourIcon.setAttribute('src', `assets/${activeData.days[selectedDay].hours[i].icon}.png`);
+            hourIcon.setAttribute('src', `assets/${activeData.days[selectedDay].hours[i].icon}.svg`);
             hourElement.appendChild(hour);
 
             const hourTemp = document.createElement('div');
