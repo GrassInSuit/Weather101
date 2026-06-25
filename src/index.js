@@ -7,9 +7,14 @@ import { fetchWeather , textContent } from "./methods.js";
 const fetchList = document.getElementById('inputList');
 const textHandler = new textContent();
 const fetchHandler = new fetchWeather();
-let activeData;  
-//get's user's current location and automatically fetches the weather data there (requires access to location)
+const welcomeScr= document.querySelector('.welcomeScr');
+const BG_animation = document.querySelector('.BG-animation');
+let activeData; 
+textHandler.createText(`status: none`,errorHandler); 
+//Welcome screen, this will be displayed when the user first opens the app and no location has been selected yet
+const Dashboard = document.querySelector('.Dashboard');
 
+//get's user's current location and automatically fetches the weather data there (requires access to location)
 navigator.geolocation.getCurrentPosition(async position => {
     const unitGroup = fetchList.querySelector('select').value;
     const unit = unitGroup == "metric" ? "C" : "F";
@@ -21,6 +26,10 @@ navigator.geolocation.getCurrentPosition(async position => {
             const localHour = parseInt(activeData.currentConditions.datetime.split(":")[0]);
             console.log(activeData);
             displayCurrentWeather(localHour,0);
+            textHandler.createText(`status: Location found!`,errorHandler);
+            Dashboard.style.display = "flex";
+            welcomeScr.style.display = "none";
+            BG_animation.style.display = "none";
         })
 
 })})
@@ -36,10 +45,14 @@ const unitGroup = fetchList.querySelector('select').value;
     console.log(activeData);
         const localHour = parseInt(activeData.currentConditions.datetime.split(":")[0]);
     displayCurrentWeather(localHour,0);
+        textHandler.createText(`status: Location found!`,errorHandler);
+            Dashboard.style.display = "flex";
+            welcomeScr.style.display = "none";
+            BG_animation.style.display = "none";
         })
 .catch(error => {
     console.error('Error fetching weather data:', error);
-    textHandler.createText(`Error ${error.status} : ${error.message}`,errorHandler);
+    textHandler.createText(`status: Error ${error.status} : ${error.message}`,errorHandler);
 });
 
 });
@@ -174,16 +187,19 @@ async function displayCurrentWeather(selectedHour,selectedDay){
 
 const searchButton = document.querySelector('.searchButt');
 const closeButton = document.querySelector('.closeButt');
-searchButton.addEventListener('click',() => {
+searchButton.addEventListener('click',() => openSearch());
+const  getStarted = document.querySelector('.getStarted');
+getStarted.addEventListener('click',() => openSearch());
+function openSearch(){
     console.log("search button clicked");
     const searchScrn = document.querySelector('.searchScr');
-    const Dashboard = document.querySelector('.Dashboard');
     searchScrn.style.display = "flex";
     Dashboard.style.filter = "blur(5px)";
+    welcomeScr.style.filter = "blur(5px)";
     const closeButton = document.querySelector('.closeButt');
     closeButton.addEventListener('click',() => {
         searchScrn.style.display = "none";
         Dashboard.style.filter = "blur(0px)";
+        welcomeScr.style.filter = "blur(0px)";
     })
-});
-
+}

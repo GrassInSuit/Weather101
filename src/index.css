@@ -18,14 +18,71 @@ body{
     overflow-x: hidden; /* Prevents horizontal scrolling entirely */
     width: 100%;
 }
+/* --- WELCOME SCREEN --- */
+
+.welcomeScr{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    color: #D3DAD9;
+    font-size: 1.5rem;
+    backdrop-filter: blur(5px);
+}
+.brandTitle{
+    font-size: 6rem;
+    font-weight: 700;
+    height: fit-content;
+    margin-bottom: 1rem;
+    transition:font-size 0.3s ease-in-out;
+}
+.brandTitle:hover{
+    font-size: 6.5rem;
+}
+.description1{
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    height: fit-content;
+    margin-bottom: 1rem;
+}
+.description2{
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    height: fit-content;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.getStarted{
+    width: 20rem;
+    height: 5rem;
+    border-radius: 15px;
+    background-color: #44444E;
+    color: #D3DAD9;
+    border: none;
+    font-size: 1.7rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+}
+.getStarted:hover{
+    background-color:#2A2A31;
+    border: 1px solid #D3DAD9;
+}
 .nav-Bar{
 
 }
 .Dashboard{
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 100%;
     min-width: 310px;
+    transition: all 0.1s ease-in-out;
 }
 /* --- NAVIGATION SYSTEM --- */
 .navBar{
@@ -94,14 +151,22 @@ body{
     justify-self: center;
     padding: 1rem;
     border-radius: 15px;
+    animation: Pop-up 0.1s ease-in-out;
+    border: 1px solid #44444E;
 }
 .closeButt{
-    background: transparent;
-    border: none;
+    background:#37353E;
+    border:#44444E 1px solid;
+    border-radius: 10%;
     width: 30px;
     height: 30px;
     margin-left: 20%;
     cursor: pointer;
+}
+.errorHandler{
+    color: #D3DAD9;
+    font-size: 0.8rem;
+    text-align: center;
 }
 @keyframes Pop-up{
     0%{
@@ -471,13 +536,10 @@ body{
 }
 /* --- BACKGROUND ANIMATION---*/
 .BG-animation{
-   display: none;
 }
 .sunny{
-    display: none;
     position: absolute;
     width: 100%;
-    height: 100%;
     z-index: -1;
 
 }
@@ -491,6 +553,7 @@ body{
 
 }
 .rainy{
+    display: none;
     position: absolute;
     width: 100%;
     height: 100%;
