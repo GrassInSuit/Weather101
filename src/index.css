@@ -527,7 +527,6 @@ body{
 
 /* --- FOOTER --- */
 .footer{
-    display: none;
     background-color:#44444E;
     position: fixed;
     width: 100%;
