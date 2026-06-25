@@ -33,7 +33,7 @@ navigator.geolocation.getCurrentPosition(async position => {
         })
 
 })})
-    //fetchs weather data from the API and returns the active data if already fetched
+        //fetchs weather data from the API and returns the active data if already fetched
 console.log(fetchList);
     fetchList.addEventListener('submit',event => {
 const cityName = fetchList.querySelector('input[name="city"]').value;
