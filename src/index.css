@@ -32,14 +32,14 @@ body{
     backdrop-filter: blur(5px);
 }
 .brandTitle{
-    font-size: 6rem;
+    font-size: 3rem;
     font-weight: 700;
     height: fit-content;
     margin-bottom: 1rem;
     transition:font-size 0.3s ease-in-out;
 }
 .brandTitle:hover{
-    font-size: 6.5rem;
+    font-size: 3.5rem;
 }
 .description1{
     font-size: 1.5rem;
@@ -708,6 +708,9 @@ body{
     .closeButt{
         margin-left: 10%;
     }
+    .brandTitle{
+        font-size: 4rem;
+    }
     }
 
 @media (max-width : 550px) {
@@ -827,5 +830,8 @@ body{
     }
     .closeButt{
         margin-left: 0%;
+    }
+    .brandTitle{
+        font-size: 3rem;
     }
 }
