@@ -6,28 +6,34 @@
     <link rel="stylesheet" href="src\index.css">
     <title>Weather101</title>
 </head>
+
 <body>
-    <nav class="navBar">
-    <div class="navDiv">
-    <div class="Title"><a><span class="prefix">Welcome to</span> weather101</a></div>
-    <div class="btn">
-        <button class="themeBtn"><a>theme</a></button>
-        <select class="langSelec">
-            <option value="Eng"><a>Eng</a></option>
-            <option value="Fr"><a >Fr</a></option>
-        </select>
-    </div>
-</nav>
-    <div class="mainBody">
-        <form id="inputList" class="inputList">
+        <div class="searchScr">
+        <button class="closeButt"><img src="assets/close.svg"></button>       
+
+        <div class="searchBox">     
+            <form id="inputList" class="inputList">
+                <div class="searchBar">
         <input name ="city" type="text" placeholder="Seach for a location . . ."/>
-            <button type="submit" class="submitBtn"></button>
+            <button type="submit" class="submitBtn"><img src="assets/search.svg" alt=""></button></div>
         <select>
             <option value="metric">EU</option>
             <option value="us">US</option>
         </select>
     </form>
-    <div id="errorHandler"></div>
+        <div id="errorHandler">status: --</div>
+</div>
+
+    </div>
+    <div class="Dashboard">    
+
+    <nav class="navBar">
+    <div class="navDiv">
+    <div class="Title"><a>Weather101</a></div>
+    <button class="searchButt" src="search.svg"><img src="assets/search.svg" alt=""></button></div>
+
+</nav>
+    <div class="mainBody">
 </div>
     <div class="outputBox">
         <div class="start-screen">Welcome to Weather 101 <img src="" alt="" class="startIcon"></div>
@@ -68,14 +74,16 @@
 
         <div class="hoursSlider">
             <div class="headText">Hourly broadcast:</div>
-
+            <hr>
             <div class="scroll-Bar">
                 <div class="cardWrapper">
 
                 </div>
                     </div>
                         </div>
-</div>        </div>
+        </div>
+    </div>
+</div>
     <nav class="footer">
         <ul class="contact list">
 
@@ -85,5 +93,19 @@
         </ul>
     </nav>
 </body>
+ <div class="BG-animation">
+        <div class="sunny">
+            <img src="assets/background/Sunny.svg" alt="Sunny" class="sunIcon">
+        </div>
+        <div class="rainy">
+            <div class="cloudy-track">
+            <img src="assets/background/cloudy.svg" alt="Rainy" class="cloudy">
+            <img src="assets/background/cloudy.svg" alt="Rainy" class="cloudy">
+            <img src="assets/background/cloudy.svg" alt="Rainy" class="cloudy">
+
+        </div>
+    </div>
+</div>
+
 <script type="module" src="src\index.js"></script>
 </html>

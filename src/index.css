@@ -10,8 +10,7 @@
 }
 
 body{
-    display: flex;
-    flex-direction: column;
+    display: grid;
     background: #2A2A2E;
     font-family: 'Poppins', sans-serif;
     color: #D3DAD9;
@@ -19,12 +18,18 @@ body{
     overflow-x: hidden; /* Prevents horizontal scrolling entirely */
     width: 100%;
 }
+.nav-Bar{
 
+}
+.Dashboard{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 310px;
+}
 /* --- NAVIGATION SYSTEM --- */
 .navBar{
-    position: fixed;
-    backdrop-filter: blur(10px); 
-    background: rgba(190, 190, 190, 0.01);
+    position: top;
     margin: 0;
     width: 100% ;
     min-width: 310px;
@@ -34,12 +39,11 @@ body{
 
 .navDiv{
     display: flex;
+    width: 100%;
     flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
-    backdrop-filter:none;
     opacity: 100%;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+    /*box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);*/
 }
 
 .Title{
@@ -48,92 +52,86 @@ body{
 }
 
 .Title a{
-    font-size: 1.5rem;
-    font-weight: 900;
+    font-size: 36px;
+    line-height: 56px;
+    letter-spacing: -.6px;
+    font-weight: 652;
     transition: font-size 0.3s ease-in-out;
 }
 
 .Title a:hover{
-    font-size: 1.6rem;
+    font-size: 3rem;
 }
-
-.btn{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
-    margin-right: 2rem;
-}
-
-.btn select{
-    font-family: 'Poppins',sans-serif;
-    width: 4rem;
-    height: 2rem;
-    border-radius: 0.9rem ;
+.searchButt{
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: 3%;
+    background-color:#2A2A2E;
     border: none;
-    background-color: rgba(0, 0, 0, 0);
-    color: #D3DAD9;
-    outline: 2px solid #D3DAD9;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24' fill='%23D3DAD9'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: 12px;
-    background-position: 80% 50%;
-    text-align: center;
-    text-indent: -0.5rem;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    margin-left: 0;
 }
+/*---SEARCH SCREEN---*/
+.searchScr{
+    display: none;
+    margin-top: 180px;
+    flex-direction: column;
+    row-gap: 30px;
+    width: 100%;
+    position: absolute;
+    overflow-x:hidden;
+    z-index: 1000;
 
-.btn select:hover{
-    transform: scale(1.1);
-    outline: none;
-    background-color: #D3DAD9;
-    color: #44444E;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 0 24 24' width='24' fill='%23'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z'/%3E%3C/svg%3E");
 }
-
-.btn button{
-    font-family: 'Poppins',sans-serif;
-    width: 5rem;
-    height: 2rem;
-    border-radius: 0.9rem;
+.searchBox{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 1rem;
+    width: 500px;
+    background-color: #2A2A2E;
+    align-self: center;
+    justify-self: center;
+    padding: 1rem;
+    border-radius: 15px;
+}
+.closeButt{
+    background: transparent;
     border: none;
-    background-color: rgba(0, 0, 0, 0);
-    color: #D3DAD9;
-    outline: 2px solid #D3DAD9;
+    width: 30px;
+    height: 30px;
+    margin-left: 20%;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
 }
-
-.btn button:hover{
-    transform: scale(1.1); 
-    outline: none;
-    background-color: #D3DAD9;
-    color: #37353E;
+@keyframes Pop-up{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
-
 /* --- SEARCH SYSTEM --- */
 .mainBody{
-    display: flex;
-    margin-top: 80px;
+    display: none;
     justify-content: center;
 }
 
 .inputList{
-    display: flex;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
     width: 100%;
     height: 5vh;
     gap:0;
     justify-content: center;
 }
-
+.searchBar{
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    column-gap: 0%;
+}
 .inputList input{
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    width: 60%;
-    margin-left: 4rem;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     border: 1px solid #44444E;
@@ -152,14 +150,10 @@ body{
 }
 
 .inputList button{
-    width: 3rem;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     border: none;
     background-color: #44444E;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23e3e3e3'%3E%3Cpath d='M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: 40% 50%;
     cursor: pointer;
 }
 
@@ -217,6 +211,7 @@ body{
     border-radius: 15px;
     display: grid;
     grid-template-columns: 0.5fr 1fr 1.5fr;
+    background-color: #303035;
 }
 
 .weatherLocation{
@@ -318,8 +313,11 @@ body{
     grid-column: span 2;
     border-radius: 15px;
     border: 1px solid #44444E;
+    background-color: #303035;
 }
-
+.hoursSlider hr{
+    color:#44444E;
+}
 .hoursList{
     background-color: #37353E;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
@@ -353,6 +351,8 @@ body{
     text-align: center;
     font-variant-numeric: tabular-nums;
     cursor: pointer;
+    transition:border 0.3s ease-in-out;
+
 }
 .Hour:hover{
     transition: background-color 0.3s ease-in-out;
@@ -388,6 +388,8 @@ body{
     border-radius: 15px;
     grid-column: 2/3;
     border: 1px solid #44444E;
+    background-color: #303035;
+
 }
 .nav-Bar{
     position: relative;
@@ -396,13 +398,14 @@ body{
     padding: 1rem ,5%;
 }
 .days-sliderWrapper{
-    height: 30%;
+    height: 15rem;
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
     scroll-snap-type: y mandatory;
     scroll-margin-top: 0.3rem;
     scrollbar-width: none;
+
 }
 
 .Day{
@@ -417,6 +420,7 @@ body{
     color: #D3DAD9;
     font-variant-numeric: tabular-nums;
     cursor: pointer;
+    transition:border 0.3s ease-in-out;
 
 }
 
@@ -457,6 +461,7 @@ body{
 
 /* --- FOOTER --- */
 .footer{
+    display: none;
     background-color:#44444E;
     position: fixed;
     width: 100%;
@@ -464,8 +469,181 @@ body{
     bottom: 0;
     font-size: 0.7rem;
 }
+/* --- BACKGROUND ANIMATION---*/
+.BG-animation{
+   display: none;
+}
+.sunny{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 
+}
+.sunny img{
+    position: absolute;
+    width: 1000px;
+    z-index: -1;
+    top: -1050px;
+    left: -500px;
+    animation: sunnyAnimation 120s linear infinite;
+
+}
+.rainy{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.cloudy{
+  position: relative;
+    top: -755px;
+  height: 300px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+.cloudy-track {
+  display: flex;
+  flex-direction: row;
+  row-gap: -100px;
+  width: 200%;              /* two copies side-by-side */
+  height: 100%;
+  animation: cloudMove 60s linear infinite;
+  will-change: transform;
+
+}
+
+.cloudy-img {
+  flex: 0 0 50%;            /* each image takes half the track */
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: translateZ(0);
+  
+}
+
+@keyframes cloudMove {
+  from { transform: translateX(0); }
+  to   { transform: translateX(50%); } /* slide left by one image width */
+}
+@keyframes sunnyAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 /* --- MEDIA QUERIES --- */
+
+@media (max-width: 920px) and (min-width: 550px){
+    .outputBox{
+        width: 520px;
+        height: auto;
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+    
+    .statList{
+        width: 100%;
+        height: 7rem;
+        grid-column: span 3;
+        grid-row: 3;
+        margin-top: 1rem;
+        grid-template-columns: repeat(4,1fr);
+
+    }
+    .selectedWeather{
+        width: 100%;
+        grid-column: 1/4;
+        grid-row:  1/4;
+    }
+    .fTemp{
+        font-size: 0.9rem;
+    }
+    .Temp{
+        font-size: 2rem;
+    }
+    .weatherLocation{
+        font-size: 0.8rem;
+    }
+    .city{
+        font-size: 1.5rem;
+    }
+    .Icon{
+        height: 5rem;
+        width: 5rem;
+    }
+    .daysSlider{
+        width: 200px;
+        justify-self: end;        
+    }
+    .Day{
+        width: 180px;
+        grid-template-columns: 1fr 1fr 2fr;
+        margin-left: 0.5rem;
+    }
+    .Days{
+        height: 1.4rem;
+        width: 1.4rem;
+        grid-column: span 1;
+        margin-top: 0.9rem;
+    }
+    .temp{
+        grid-column: span 1;
+        text-indent: 0 , 0.5rem;
+        font-size: 0.8rem;
+    }
+    .date{
+        font-size: 0.8rem;
+    }
+    .hoursSlider{
+        width: 200px;
+        height: 320px;  /* Add a fixed height for vertical scrolling */
+        grid-column: 1/2;
+        grid-row: 4/5;
+        margin-left: 2rem;
+    }
+    .headText{
+        font-size: 0.8rem;
+    }
+    .cardWrapper{
+        width: 100%;
+        height: 25%;
+        flex-direction: column;  /* Changed from row */
+        scroll-snap-type: y mandatory;  /* Changed from x mandatory */
+        overflow-y: scroll;  /* Changed from overflow-x */
+    }
+    .Hour{
+        display:grid;
+        width: 180px;
+        aspect-ratio: 16/3;
+        scroll-snap-align:start;
+        margin: 0.5rem 0.3rem 0.3rem 0.3rem;
+        scroll-snap-align: start;
+        justify-content: start;
+        padding-left: 10px;
+        grid-template-columns: 1fr 1fr 2fr;
+    }
+    .temp{
+        grid-column: Span 1;
+        text-indent: 0 , 0.5rem;
+    }
+    .hour{
+        margin-top: 0.3rem;
+    }
+    .Hour img{
+        height: 1.3rem;
+        width: 1.3rem;
+        margin-top: 0.3rem;
+    }
+    }
+
 @media (max-width : 550px) {
     body {
         min-width: 100%; /* Allow body to shrink fully */
@@ -582,107 +760,3 @@ body{
         margin-left: 0.5rem;
     }
 }
-@media (max-width: 920px) and (min-width: 550px){
-    .outputBox{
-        width: 520px;
-        height: auto;
-        display: grid;
-        align-items: center;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(2,1fr);
-    }
-    
-    .statList{
-        width: 100%;
-        height: 7rem;
-        grid-column: span 3;
-        grid-row: 3;
-        margin-top: 1rem;
-        grid-template-columns: repeat(4,1fr);
-
-    }
-    .selectedWeather{
-        width: 100%;
-        grid-column: 1/4;
-        grid-row:  1/4;
-    }
-    .fTemp{
-        font-size: 0.9rem;
-    }
-    .Temp{
-        font-size: 2rem;
-    }
-    .weatherLocation{
-        font-size: 0.8rem;
-    }
-    .city{
-        font-size: 1.5rem;
-    }
-    .Icon{
-        height: 5rem;
-        width: 5rem;
-    }
-    .daysSlider{
-        width: 200px;
-        justify-self: end;        
-    }
-    .Day{
-        width: 180px;
-        grid-template-columns: 1fr 1fr 2fr;
-        margin-left: 0.5rem;
-    }
-    .Days{
-        height: 1.4rem;
-        width: 1.4rem;
-        grid-column: span 1;
-        margin-top: 0.9rem;
-    }
-    .temp{
-        grid-column: span 1;
-        text-indent: 0 , 0.5rem;
-        font-size: 0.8rem;
-    }
-    .date{
-        font-size: 0.8rem;
-    }
-    .hoursSlider{
-        width: 200px;
-        height: 320px;  /* Add a fixed height for vertical scrolling */
-        grid-column: 1/2;
-        grid-row: 4/5;
-        margin-left: 2rem;
-    }
-    .headText{
-        font-size: 0.8rem;
-    }
-    .cardWrapper{
-        width: 100%;
-        height: 25%;
-        flex-direction: column;  /* Changed from row */
-        scroll-snap-type: y mandatory;  /* Changed from x mandatory */
-        overflow-y: scroll;  /* Changed from overflow-x */
-    }
-    .Hour{
-        display:grid;
-        width: 180px;
-        aspect-ratio: 16/3;
-        scroll-snap-align:start;
-        margin: 0.5rem 0.3rem 0.3rem 0.3rem;
-        scroll-snap-align: start;
-        justify-content: start;
-        padding-left: 10px;
-        grid-template-columns: 1fr 1fr 2fr;
-    }
-    .temp{
-        grid-column: Span 1;
-        text-indent: 0 , 0.5rem;
-    }
-    .hour{
-        margin-top: 0.3rem;
-    }
-    .Hour img{
-        height: 1.3rem;
-        width: 1.3rem;
-        margin-top: 0.3rem;
-    }
-    }

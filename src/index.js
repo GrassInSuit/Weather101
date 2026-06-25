@@ -98,7 +98,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
             dayElement.setAttribute('id','D'+i);
                 //different color for the selected day
                 if (i == selectedDay){
-                dayElement.style.border = "1px solid";
+                dayElement.style.border = "1px solid #44444E";
                 };
             const dateElement = document.createElement('div');
             dateElement.setAttribute('class','date');
@@ -128,7 +128,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
             hourElement.setAttribute('id','H'+i);
                     //different color for the selected hour
                 if (i == selectedHour){
-                hourElement.style.border = "1px solid";
+                hourElement.style.border = "1px solid #44444E";
                 }
             const hour = document.createElement('div');
             hour.setAttribute('class','hour');
@@ -170,5 +170,20 @@ async function displayCurrentWeather(selectedHour,selectedDay){
         textHandler.createText("Loading...",errorHandler);
     }}
 
+//search screen pop up system
 
+const searchButton = document.querySelector('.searchButt');
+const closeButton = document.querySelector('.closeButt');
+searchButton.addEventListener('click',() => {
+    console.log("search button clicked");
+    const searchScrn = document.querySelector('.searchScr');
+    const Dashboard = document.querySelector('.Dashboard');
+    searchScrn.style.display = "flex";
+    Dashboard.style.filter = "blur(5px)";
+    const closeButton = document.querySelector('.closeButt');
+    closeButton.addEventListener('click',() => {
+        searchScrn.style.display = "none";
+        Dashboard.style.filter = "blur(0px)";
+    })
+});
 
