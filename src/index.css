@@ -527,9 +527,8 @@ body{
 
 /* --- FOOTER --- */
 .footer{
-    background-color:#44444E;
     position: fixed;
-    width: 100%;
+    width: fit-content;
     min-width: 310px;  
     bottom: 0;
     font-size: 0.7rem;
@@ -716,6 +715,7 @@ body{
 @media (max-width : 550px) {
     body {
         min-width: 100%; /* Allow body to shrink fully */
+
     }
     .navBar.nabDiv{
         width: 100%;
@@ -830,6 +830,16 @@ body{
     }
     .closeButt{
         margin-left: 0%;
+    }
+    .welcomeScr{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .sunny img{
+        width: 600px;
+        top: -750px;
+        left: -350px;
+        overflow-x: hidden;
     }
     .brandTitle{
         font-size: 3rem;

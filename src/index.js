@@ -27,6 +27,7 @@ navigator.geolocation.getCurrentPosition(async position => {
             console.log(activeData);
             displayCurrentWeather(localHour,0);
             textHandler.createText(`status: Location found!`,errorHandler);
+            closeSearch();
             Dashboard.style.display = "flex";
             welcomeScr.style.display = "none";
             BG_animation.style.display = "none";
@@ -46,6 +47,7 @@ const unitGroup = fetchList.querySelector('select').value;
         const localHour = parseInt(activeData.currentConditions.datetime.split(":")[0]);
     displayCurrentWeather(localHour,0);
         textHandler.createText(`status: Location found!`,errorHandler);
+        closeSearch();
             Dashboard.style.display = "flex";
             welcomeScr.style.display = "none";
             BG_animation.style.display = "none";
@@ -197,9 +199,11 @@ function openSearch(){
     Dashboard.style.filter = "blur(5px)";
     welcomeScr.style.filter = "blur(5px)";
     const closeButton = document.querySelector('.closeButt');
-    closeButton.addEventListener('click',() => {
-        searchScrn.style.display = "none";
-        Dashboard.style.filter = "blur(0px)";
-        welcomeScr.style.filter = "blur(0px)";
-    })
+    closeButton.addEventListener('click',() => closeSearch());
+}
+function closeSearch(){
+    const searchScrn = document.querySelector('.searchScr');
+    searchScrn.style.display = "none";
+    Dashboard.style.filter = "blur(0px)";
+    welcomeScr.style.filter = "blur(0px)";
 }
