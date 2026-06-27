@@ -24,7 +24,6 @@ navigator.geolocation.getCurrentPosition(async position => {
         fetchHandler.getLocationName(Latitude,Longitude).then(name => {
             activeData = Object.assign({locationName:name, unitGroup, unit},data);
             const localHour = parseInt(activeData.currentConditions.datetime.split(":")[0]);
-            console.log(activeData);
             displayCurrentWeather(localHour,0);
             textHandler.createText(`status: Location found!`,errorHandler);
             closeSearch();
@@ -35,7 +34,6 @@ navigator.geolocation.getCurrentPosition(async position => {
 
 })})
         //fetchs weather data from the API and returns the active data if already fetched
-console.log(fetchList);
     fetchList.addEventListener('submit',event => {
 const cityName = fetchList.querySelector('input[name="city"]').value;
 const unitGroup = fetchList.querySelector('select').value;
@@ -43,7 +41,6 @@ const unitGroup = fetchList.querySelector('select').value;
         fetchHandler.useName(cityName,unitGroup).then(data => {
         const   unit = unitGroup == "metric" ? "C" : "F";
     activeData = Object.assign({unitGroup, unit},data);
-    console.log(activeData);
         const localHour = parseInt(activeData.currentConditions.datetime.split(":")[0]);
     displayCurrentWeather(localHour,0);
         textHandler.createText(`status: Location found!`,errorHandler);
@@ -53,7 +50,6 @@ const unitGroup = fetchList.querySelector('select').value;
             BG_animation.style.display = "none";
         })
 .catch(error => {
-    console.error('Error fetching weather data:', error);
     textHandler.createText(`status: Error ${error.status} : ${error.message}`,errorHandler);
 });
 
@@ -68,9 +64,7 @@ async function displayCurrentWeather(selectedHour,selectedDay){
         const formattedHour = selectedHour.toString().padStart(2, '0'); // Ensures "09" instead of "9"
         const date = `${day} ${month[parseInt(monthNum) - 1]} | ${formattedHour}:00`
         const windUnit = activeData.unitGroup === "metric" ? "kph" : "mph";
-        console.log(activeData);
         let location = activeData.locationName || activeData.resolvedAddress || "Unknown Location";
-        console.log(location);
         if (location.length > 20){
             location = location.slice(0,10)+"...";
         }
@@ -86,7 +80,6 @@ async function displayCurrentWeather(selectedHour,selectedDay){
             desc: activeData.description
         }
         
-        console.log(date);
         textHandler.removeText(errorHandler);
         textHandler.createText(weatherObject.Temp,document.querySelector('.Temp'));
         textHandler.createText("feels like: " + weatherObject.fTemp,document.querySelector('.fTemp'))
@@ -193,7 +186,6 @@ searchButton.addEventListener('click',() => openSearch());
 const  getStarted = document.querySelector('.getStarted');
 getStarted.addEventListener('click',() => openSearch());
 function openSearch(){
-    console.log("search button clicked");
     const searchScrn = document.querySelector('.searchScr');
     searchScrn.style.display = "flex";
     Dashboard.style.filter = "blur(5px)";
