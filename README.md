@@ -21,6 +21,11 @@ This project serves as both a learning exercise and a demonstration of what can 
 - **CSS3** (49.8%) - Styling and layout
 - **JavaScript** (38.1%) - Core functionality and interactivity
 
+## 🚀 Live Demo
+
+Try the application right now without any setup:
+**[Weather101 - Live Demo](https://grassinsuit.github.io/Weather101/)**
+
 ## 📦 Getting Started
 
 ### Prerequisites
@@ -49,7 +54,7 @@ This project serves as both a learning exercise and a demonstration of what can 
 3. **Visit in your browser**
    - Navigate to `http://localhost:8000` (or your chosen port)
 
-## 🚀 Usage
+## 📝 Usage
 
 1. Enter a city name or location
 2. The app will fetch and display current weather information
